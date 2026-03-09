@@ -21,40 +21,165 @@
             color: white;
             font-family: 'poppins', sans-serif;
         }
-        nav{
+
+        nav {
             display: flex;
             justify-content: space-around;
             align-items: center;
             height: 80px;
-            background-color: rgb(18,18,62);
+            background-color: rgb(18, 18, 62);
         }
-        nav ul{
+
+        nav ul {
             display: flex;
             justify-content: center;
 
         }
-        nav ul li{
+
+        nav ul li {
             list-style: none;
-            margin:0 23px
+            margin: 0 23px
         }
-        .left{
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        nav ul li a:hover {
+            color: rgb(62, 62, 172);
+            font-size: 1.04rem;
+        }
+
+        main hr {
+            border: 0;
+            background-color: #9c97f1;
+            height: 1.2px;
+            margin: 40px 84px;
+        }
+
+        .left {
             font-size: 1.5rem;
         }
-        .firstSection{
+
+        .firstSection {
             display: flex;
             justify-content: space-around;
-            margin: 23px 0;
+            margin: 85px 0;
+            align-items: center;
         }
-         .firstSection div{
-           width: 30%;
-        } 
 
-        .leftSection{
-            background-color: red;
+        .firstSection>div {
+            width: 30%;
         }
-        .rightSection{
-            background-color: red;
-        } 
+
+        .leftSection {
+            font-size: 2.5rem;
+        }
+    .leftSection .buttons{
+        padding: 50px 0;
+    }
+        .leftSection .btn {
+            font-size: 2.5rem;
+        }
+
+        .leftSection .btn {
+            padding: 12px;
+            background: #1e2167;
+            color: white;
+            border: 2px solid white;
+            border-radius: 6px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .rightSection img {
+            /* margin: 80px 0 0 -150px; */
+            width: 100%;
+        }
+
+        .purple {
+            color: rgb(108, 20, 190);
+        }
+
+        .text-grey {
+            color: gray;
+        }
+
+        #element {
+            color: rgb(108, 20, 190);
+        }
+
+        .secondSection {
+            max-width: 80vw;
+            margin: auto;
+            height: 80vh;
+        }
+
+        .secondSection h1 {
+            font-size: 1.5rem;
+        }
+
+        .secondSection .box {
+            background-color: white;
+            width: 80vw;
+            height: 2px;
+            margin: 56px;
+            display: flex;
+        }
+
+        .secondSection .vertical {
+            height: 93px;
+            width: 1px;
+            background-color: white;
+            margin: 0 100px;
+        }
+
+        .image-top {
+            width: 23px;
+            position: relative;
+            top: -32px;
+            left: -9px;
+        }
+
+        .vertical-title {
+            position: relative;
+            top: 75px;
+            width: 150px;
+            font-size: 13.5px;
+        }
+
+        .vertical-desc {
+            position: relative;
+            top: 86px;
+            color: gray;
+            width: 150px;
+            font-size: 9px;
+        }
+
+        footer {
+            background-color: #0e0e1a;
+        }
+
+        .footer {
+            display: flex;
+            padding: 23px 122px;
+            justify-content: space-evenly;
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer>div {
+            width: 223px;
+        }
+
+        footer .footer-rights {
+            text-align: center;
+            color: gray;
+            padding: 12px 0;
+        }
     </style>
 
 </head>
@@ -66,27 +191,156 @@
             <div class="left">Shivraj portfolio</div>
             <div class="right">
                 <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Services</li>
-                    <li>Projects</li>
-                    <li>Contact</li>    
+                    <li><a href="/">Home </a></li>
+                    <li><a href="/">About </a></li>
+                    <li><a href="/">Services </a></li>
+                    <li><a href="/">Projects </a></li>
+                    <li><a href="/">Contact Me </a></li>
                 </ul>
             </div>
         </nav>
     </header>
-<main>
-    <section class = "firstSection">
-        <div class = "leftSection"> 
-            hi My name is Shivraj Singh 
-            <div>
-                and i am a web developer
+    <main>
+        <section class="firstSection">
+            <div class="leftSection">
+                Hi, My name is <span class="purple">Shivraj </span>
+                <div>and I am a passionate</div>
+                <div>Web Developer</div>
+                <span id="element"></span>
+                <div class="buttons">
+                    <button class="btn">Download Resume</button>
+                    <button class="btn">Visit Github</button>
+                </div>
+            </div>
+            <div class="rightSection">
+                <img src="../Assets/bg.png">
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="secondSection">
+            <span class="text-Grey">What I have done So Far </span>
+            <h1>Work Experience</h1>
+
+            <div class="box">
+                <div class="vertical">
+                    <img class="image-top" src="../Assets/developer.png" alt="">
+                    <div class="vertical-title">
+                        HTML- Developer
+                    </div>
+
+                    <div class="vertical-desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit
+                        . Repudiandae suscipit aliquam optio laborum culpa placeat o
+                        fficia accusantium eligendi, rem, exercitationem odit nobis doloribus!
+                    </div>
+                </div>
+
+                <div class="vertical">
+                    <img class="image-top" src="../Assets/developer.png" alt="">
+                    <div class="vertical-title">
+                        Node.js Developer
+                    </div>
+                    <div class="vertical-desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit
+                        . Repudiandae suscipit aliquam optio laborum culpa placeat o
+                        fficia accusantium eligendi, rem, exercitationem odit nobis doloribus!
+                    </div>
+                </div>
+
+                <div class="vertical">
+                    <img class="image-top" src="../Assets/developer.png" alt="">
+                    <div class="vertical-title">
+                        HTML- Developer
+                    </div>
+                    <div class="vertical-desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit
+                        . Repudiandae suscipit aliquam optio laborum culpa placeat o
+                        fficia accusantium eligendi, rem, exercitationem odit nobis doloribus!
+                    </div>
+                </div>
+
+                <div class="vertical">
+                    <img class="image-top" src="../Assets/developer.png" alt="">
+                    <div class="vertical-title">
+                        HTML- Developer
+                    </div>
+                    <div class="vertical-desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit
+                        . Repudiandae suscipit aliquam optio laborum culpa placeat o
+                        fficia accusantium eligendi, rem, exercitationem odit nobis doloribus!
+                    </div>
+                </div>
+
+                <div class="vertical">
+                    <img class="image-top" src="../Assets/HTML.png" alt="">
+                    <div class="vertical-title">
+                        HTML- Developer
+                    </div>
+                    <div class="vertical-desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit
+                        . Repudiandae suscipit aliquam optio laborum culpa placeat o
+                        fficia accusantium eligendi, rem, exercitationem odit nobis doloribus!
+                    </div>
+                </div>
+
+                <div class="vertical">
+                    <img class="image-top" src="../Assets/NODE.jpg" alt="">
+                    <div class="vertical-title">
+                        HTML- Developer
+                    </div>
+                    <div class="vertical-desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit
+                        . Repudiandae suscipit aliquam optio laborum culpa placeat o
+                        fficia accusantium eligendi, rem, exercitationem odit nobis doloribus!
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    <footer>
+        <div class="footer">
+            <div class="footer first">
+                <h3>Shivraj's Developer Portfolio</h3>
+            </div>
+            <div class="footer second">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                    <li>Services</li>
+                </ul>
+            </div>
+            <div class="footer third">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                    <li>Services</li>
+                </ul>
+            </div>
+            <div class="footer fourth">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                    <li>Services</li>
+                </ul>
             </div>
         </div>
-        <div class="rightSection">
-<img src="bg.jpg" width="300">  </div>
-    </section>
-</main>
+        <div class="footer-rights">
+            copyright &#169; www.shivrajprotfolio.com | All rights reserved
+        </div>
+    </footer>
+    <script src="https://unpkg.com/typed.js@3.0.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Web Developer', 'Graphic Designer', 'Web Designer', 'Video Editor'],
+            typeSpeed: 50,
+        });
+    </script>
 </body>
 
 </html>
