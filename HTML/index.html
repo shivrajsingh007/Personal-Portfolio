@@ -2,345 +2,261 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <title>Document</title>
+<title>Shivraj Singh | Developer</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
+<link rel="stylesheet" href="../CSS/style.css">
 
-        body {
-            background-color: rgb(0, 0, 33);
-            color: white;
-            font-family: 'poppins', sans-serif;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            height: 80px;
-            background-color: rgb(18, 18, 62);
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-
-        }
-
-        nav ul li {
-            list-style: none;
-            margin: 0 23px
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: white;
-        }
-
-        nav ul li a:hover {
-            color: rgb(62, 62, 172);
-            font-size: 1.04rem;
-        }
-
-        main hr {
-            border: 0;
-            background-color: #9c97f1;
-            height: 1.2px;
-            margin: 40px 84px;
-        }
-
-        .left {
-            font-size: 1.5rem;
-        }
-
-        .firstSection {
-            display: flex;
-            justify-content: space-around;
-            margin: 85px 0;
-            align-items: center;
-        }
-
-        .firstSection>div {
-            width: 30%;
-        }
-
-        .leftSection {
-            font-size: 2.5rem;
-        }
-    .leftSection .buttons{
-        padding: 50px 0;
-    }
-        .leftSection .btn {
-            font-size: 2.5rem;
-        }
-
-        .leftSection .btn {
-            padding: 12px;
-            background: #1e2167;
-            color: white;
-            border: 2px solid white;
-            border-radius: 6px;
-            font-size: 20px;
-            cursor: pointer;
-        }
-
-        .rightSection img {
-            /* margin: 80px 0 0 -150px; */
-            width: 100%;
-        }
-
-        .purple {
-            color: rgb(108, 20, 190);
-        }
-
-        .text-grey {
-            color: gray;
-        }
-
-        #element {
-            color: rgb(108, 20, 190);
-        }
-
-        .secondSection {
-            max-width: 80vw;
-            margin: auto;
-            height: 80vh;
-        }
-
-        .secondSection h1 {
-            font-size: 1.5rem;
-        }
-
-        .secondSection .box {
-            background-color: white;
-            width: 80vw;
-            height: 2px;
-            margin: 56px;
-            display: flex;
-        }
-
-        .secondSection .vertical {
-            height: 93px;
-            width: 1px;
-            background-color: white;
-            margin: 0 100px;
-        }
-
-        .image-top {
-            width: 23px;
-            position: relative;
-            top: -32px;
-            left: -9px;
-        }
-
-        .vertical-title {
-            position: relative;
-            top: 75px;
-            width: 150px;
-            font-size: 13.5px;
-        }
-
-        .vertical-desc {
-            position: relative;
-            top: 86px;
-            color: gray;
-            width: 150px;
-            font-size: 9px;
-        }
-
-        footer {
-            background-color: #0e0e1a;
-        }
-
-        .footer {
-            display: flex;
-            padding: 23px 122px;
-            justify-content: space-evenly;
-        }
-
-        .footer ul {
-            list-style: none;
-        }
-
-        .footer>div {
-            width: 223px;
-        }
-
-        footer .footer-rights {
-            text-align: center;
-            color: gray;
-            padding: 12px 0;
-        }
-    </style>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
-    <header>
-        <nav>
-            <div class="left">Shivraj portfolio</div>
-            <div class="right">
-                <ul>
-                    <li><a href="/">Home </a></li>
-                    <li><a href="/">About </a></li>
-                    <li><a href="/">Services </a></li>
-                    <li><a href="/">Projects </a></li>
-                    <li><a href="/">Contact Me </a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-    <main>
-        <section class="firstSection">
-            <div class="leftSection">
-                Hi, My name is <span class="purple">Shivraj </span>
-                <div>and I am a passionate</div>
-                <div>Web Developer</div>
-                <span id="element"></span>
-                <div class="buttons">
-                    <button class="btn">Download Resume</button>
-                    <button class="btn">Visit Github</button>
-                </div>
-            </div>
-            <div class="rightSection">
-                <img src="../Assets/bg.png">
-            </div>
-        </section>
+    <canvas id="matrix"></canvas>
 
-        <hr>
 
-        <section class="secondSection">
-            <span class="text-Grey">What I have done So Far </span>
-            <h1>Work Experience</h1>
+<!-- NAVBAR -->
 
-            <div class="box">
-                <div class="vertical">
-                    <img class="image-top" src="../Assets/developer.png" alt="">
-                    <div class="vertical-title">
-                        HTML- Developer
-                    </div>
+<header>
 
-                    <div class="vertical-desc">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit
-                        . Repudiandae suscipit aliquam optio laborum culpa placeat o
-                        fficia accusantium eligendi, rem, exercitationem odit nobis doloribus!
-                    </div>
-                </div>
+<nav>
 
-                <div class="vertical">
-                    <img class="image-top" src="../Assets/developer.png" alt="">
-                    <div class="vertical-title">
-                        Node.js Developer
-                    </div>
-                    <div class="vertical-desc">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit
-                        . Repudiandae suscipit aliquam optio laborum culpa placeat o
-                        fficia accusantium eligendi, rem, exercitationem odit nobis doloribus!
-                    </div>
-                </div>
+<h2 class="logo">Shivraj Singh</h2>
 
-                <div class="vertical">
-                    <img class="image-top" src="../Assets/developer.png" alt="">
-                    <div class="vertical-title">
-                        HTML- Developer
-                    </div>
-                    <div class="vertical-desc">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit
-                        . Repudiandae suscipit aliquam optio laborum culpa placeat o
-                        fficia accusantium eligendi, rem, exercitationem odit nobis doloribus!
-                    </div>
-                </div>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
 
-                <div class="vertical">
-                    <img class="image-top" src="../Assets/developer.png" alt="">
-                    <div class="vertical-title">
-                        HTML- Developer
-                    </div>
-                    <div class="vertical-desc">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit
-                        . Repudiandae suscipit aliquam optio laborum culpa placeat o
-                        fficia accusantium eligendi, rem, exercitationem odit nobis doloribus!
-                    </div>
-                </div>
+</nav>
 
-                <div class="vertical">
-                    <img class="image-top" src="../Assets/HTML.png" alt="">
-                    <div class="vertical-title">
-                        HTML- Developer
-                    </div>
-                    <div class="vertical-desc">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit
-                        . Repudiandae suscipit aliquam optio laborum culpa placeat o
-                        fficia accusantium eligendi, rem, exercitationem odit nobis doloribus!
-                    </div>
-                </div>
+</header>
 
-                <div class="vertical">
-                    <img class="image-top" src="../Assets/NODE.jpg" alt="">
-                    <div class="vertical-title">
-                        HTML- Developer
-                    </div>
-                    <div class="vertical-desc">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit
-                        . Repudiandae suscipit aliquam optio laborum culpa placeat o
-                        fficia accusantium eligendi, rem, exercitationem odit nobis doloribus!
-                    </div>
-                </div>
-            </div>
 
-        </section>
-    </main>
-    <footer>
-        <div class="footer">
-            <div class="footer first">
-                <h3>Shivraj's Developer Portfolio</h3>
-            </div>
-            <div class="footer second">
-                <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Contact</li>
-                    <li>Services</li>
-                </ul>
-            </div>
-            <div class="footer third">
-                <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Contact</li>
-                    <li>Services</li>
-                </ul>
-            </div>
-            <div class="footer fourth">
-                <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Contact</li>
-                    <li>Services</li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-rights">
-            copyright &#169; www.shivrajprotfolio.com | All rights reserved
-        </div>
-    </footer>
-    <script src="https://unpkg.com/typed.js@3.0.0/dist/typed.umd.js"></script>
-    <script>
-        var typed = new Typed('#element', {
-            strings: ['Web Developer', 'Graphic Designer', 'Web Designer', 'Video Editor'],
-            typeSpeed: 50,
-        });
-    </script>
+
+<!-- HERO -->
+
+<section id="home" class="hero">
+
+<div class="hero-left">
+
+<h1>Hello I'm <span>Shivraj Singh</span></h1>
+
+<h2 id="typing"></h2>
+
+<p>I build modern websites and web applications.</p>
+
+<div class="buttons">
+
+<a href="../Assets/RESUME..pdf" target="_blank" class="btn">
+Download Resume
+</a>
+
+<a href="https://github.com/shivrajsingh007" target="_blank" class="btn">
+GitHub
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-right">
+
+<img src="../Assets/bg.png" alt="Shivraj">
+
+</div>
+
+</section>
+
+
+
+<!-- ABOUT -->
+
+<section id="about" class="about">
+
+<h2 class="section-title">About Me</h2>
+
+<div class="about-grid">
+
+<div class="about-card">
+
+<p>
+Computer Science student passionate about web development and solving real world problems.
+</p>
+
+<p>
+Solved <strong>400+ LeetCode problems</strong> and continuously improving problem solving skills.
+</p>
+
+</div>
+
+
+<div class="about-card">
+
+<h3>Technologies</h3>
+
+<ul>
+
+<li>HTML</li>
+<li>CSS</li>
+<li>JavaScript</li>
+<li>React</li>
+<li>Node.js</li>
+<li>SQL</li>
+<li>Git & GitHub</li>
+
+</ul>
+
+</div>
+
+
+<div class="about-card">
+
+<h3>Achievements</h3>
+
+<ul>
+
+<li>Technical Head – Ignitia</li>
+<li>Joint Promotional Head – Ignitia</li>
+<li>Volleyball Gold Medalist</li>
+<li>Regional Chess Player</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- SKILLS -->
+
+<section id="skills" class="skills">
+
+<h2 class="section-title">Skills</h2>
+
+<div class="skills-grid">
+
+<div class="skill-card">HTML</div>
+<div class="skill-card">CSS</div>
+<div class="skill-card">JavaScript</div>
+<div class="skill-card">React.js</div>
+<div class="skill-card">Node.js</div>
+<div class="skill-card">SQL</div>
+<div class="skill-card">Git</div>
+
+</div>
+
+</section>
+
+
+
+<!-- PROJECTS -->
+
+<section id="projects" class="projects">
+
+<h2 class="section-title">Projects</h2>
+
+<div class="project-grid">
+
+<div class="project-card">
+
+<h3>Todo List App</h3>
+
+<p>Task management app built with HTML CSS and JavaScript.</p>
+
+</div>
+
+
+<div class="project-card">
+
+<h3>Simon Memory Game</h3>
+
+<p>Interactive memory game created with JavaScript.</p>
+
+</div>
+
+
+<div class="project-card">
+
+<h3>Spotify Frontend</h3>
+
+<p>Frontend clone of Spotify using HTML CSS and JavaScript.</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact">
+
+<h2 class="section-title">Contact</h2>
+
+<p>Email: shivrajsingh1458@gmail.com</p>
+
+<p>Phone: 9453071171</p>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-container">
+
+<div class="footer-left">
+
+<h2>Shivraj Singh</h2>
+
+<p>Frontend Developer</p>
+
+</div>
+
+
+<div class="footer-links">
+
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#projects">Projects</a>
+
+</div>
+
+
+<div class="footer-social">
+
+<a href="https://github.com/shivrajsingh007">GitHub</a>
+
+</div>
+
+</div>
+
+<p class="copyright">
+
+© 2026 Shivraj Singh
+
+</p>
+
+</footer>
+
+
+<script src="../JS/script.js"></script>
+<script src="../JS/matrix.js"></script>
+
 </body>
-
 </html>
