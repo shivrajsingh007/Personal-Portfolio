@@ -237,6 +237,123 @@ border:3px solid #00ff9f;
 box-shadow:0 0 20px #00ff9f;
 }
 
+/* PROFILE IMAGE CONTAINER */
+
+.hero-right{
+display:flex;
+justify-content:center;
+align-items:center;
+margin-right:80px;
+}
+
+/* CIRCLE WRAPPER */
+
+.profile-circle{
+
+position:relative;
+
+width:340px;
+height:340px;
+
+border-radius:50%;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+/* image position adjust */
+
+transform: translate(-40px, 30px);
+
+}
+
+/* IMAGE */
+
+.profile-circle img{
+
+width:320px;
+height:320px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+border:3px solid #00ff9f;
+
+z-index:2;
+
+}
+
+/* ROTATING NEON RING */
+
+.profile-circle::before{
+
+content:"";
+
+position:absolute;
+
+width:360px;
+height:360px;
+
+border-radius:50%;
+
+background:conic-gradient(
+transparent,
+#00ff9f,
+transparent,
+#00ff9f
+);
+
+animation:rotateRing 6s linear infinite;
+
+filter:blur(3px);
+
+}
+
+/* INNER GLOW */
+
+.profile-circle::after{
+
+content:"";
+
+position:absolute;
+
+width:340px;
+height:340px;
+
+border-radius:50%;
+
+box-shadow:
+0 0 25px #00ff9f,
+0 0 50px #00ff9f,
+inset 0 0 20px #00ff9f;
+
+}
+
+/* ROTATION ANIMATION */
+
+@keyframes rotateRing{
+
+0%{
+transform:rotate(0deg);
+}
+
+100%{
+transform:rotate(360deg);
+}
+
+}
+
+/* HOVER EFFECT */
+
+.profile-circle:hover{
+
+transform:scale(1.05);
+
+transition:0.4s;
+
+}
+
 /* BUTTONS */
 
 .buttons{
@@ -292,29 +409,171 @@ color:#00ff9f;
 
 /* ABOUT */
 
+/* ABOUT SECTION */
+
+/* ABOUT SECTION */
+
 .about{
 padding:120px 10%;
+display:flex;
+flex-direction:column;
+align-items:center;
 }
 
-.about-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:30px;
-}
+/* MAIN BOX */
 
-.about-card{
-background:rgba(255,255,255,0.05);
-padding:25px;
-border-radius:12px;
+.about-box{
+
+max-width:900px;
+
+background:rgba(0,0,0,0.75);
+
+padding:50px;
+
+border-radius:14px;
+
+border:1px solid rgba(0,255,159,0.3);
+
 backdrop-filter:blur(10px);
-border:1px solid rgba(255,255,255,0.1);
-transition:0.3s;
+
+box-shadow:0 0 20px rgba(0,255,159,0.2);
+
+line-height:1.9;
+
+font-size:18px;
+
+color:#e5e7eb;
+
 }
 
-.about-card:hover{
-transform:translateY(-8px);
-box-shadow:0 0 15px #00ff9f;
+/* PARAGRAPH SPACING */
+
+.about-box p{
+margin-bottom:22px;
 }
+
+/* HIGHLIGHT WORDS */
+
+.about-box strong{
+color:#00ff9f;
+}
+
+/* TECH STACK */
+
+.tech-stack{
+
+margin-bottom:40px;
+
+display:flex;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:15px;
+
+}
+
+.tech-stack span{
+
+background:rgba(0,0,0,0.6);
+
+padding:10px 16px;
+
+border-radius:8px;
+
+border:1px solid rgba(0,255,159,0.3);
+
+transition:0.3s;
+
+}
+
+.tech-stack span:hover{
+
+background:#00ff9f;
+color:black;
+
+}
+
+/* ABOUT STATS */
+
+.about-stats{
+
+display:flex;
+justify-content:center;
+gap:40px;
+margin-bottom:40px;
+flex-wrap:wrap;
+
+}
+
+.stat{
+
+text-align:center;
+
+background:rgba(0,0,0,0.6);
+
+padding:20px 30px;
+
+border-radius:10px;
+
+border:1px solid rgba(0,255,159,0.3);
+
+}
+
+.stat h3{
+
+color:#00ff9f;
+font-size:28px;
+
+}
+
+/* TECH STACK */
+
+.tech-stack{
+
+margin-top:40px;
+text-align:center;
+
+}
+
+.tech-stack h3{
+
+margin-bottom:20px;
+color:#00ff9f;
+
+}
+
+.tech-icons{
+
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:15px;
+
+}
+
+.tech-icons span{
+
+background:rgba(0,0,0,0.6);
+
+padding:10px 15px;
+
+border-radius:8px;
+
+border:1px solid rgba(0,255,159,0.3);
+
+transition:0.3s;
+
+}
+
+.tech-icons span:hover{
+
+background:#00ff9f;
+color:black;
+
+}
+
 
 /* SKILLS */
 

@@ -47,17 +47,21 @@ type();
 
 /* LEETCODE COUNTER */
 
+/* LEETCODE COUNTER */
+
+let counter = document.getElementById("leetcode-counter");
+
 let count = 0;
-let target = 400;
 
 function updateCounter(){
 
-if(count <= target){
+if(count <= 400){
 
-document.getElementById("leetcode-count").innerText = count;
+counter.innerText = count;
+
 count++;
 
-setTimeout(updateCounter,5);
+setTimeout(updateCounter,10);
 
 }
 
@@ -127,3 +131,4 @@ document.querySelector("nav a[href*="+id+"]").classList.add("active");
 });
 
 };
+
