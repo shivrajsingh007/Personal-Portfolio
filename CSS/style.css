@@ -5,21 +5,142 @@ box-sizing:border-box;
 font-family:'Poppins',sans-serif;
 }
 
+/* FIX TEXT COLOR FOR DARK MATRIX BACKGROUND */
+
 body{
 color:white;
-overflow-x:hidden;
-
-background:linear-gradient(-45deg,#020024,#090979,#6c00ff,#00d4ff);
-background-size:400% 400%;
-animation:gradientBG 15s ease infinite;
 }
 
-@keyframes gradientBG{
+p{
+color:#cfcfcf;
+}
 
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
+h1,h2,h3,h4,h5,h6{
+color:white;
+}
 
+.section-title{
+color:#00ff9f;
+}
+
+.tech-stack,
+.tech-stack span{
+color:white;
+}
+
+.stat-card p{
+color:#cccccc;
+}
+
+.stat-card h3{
+color:#00ff9f;
+}
+
+/* INTRO SCREEN */
+
+/* INTRO SCREEN */
+
+#intro{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+
+background:#020213;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+z-index:9999;
+
+transition:opacity 1s ease;
+}
+
+.intro-container{
+text-align:center;
+}
+
+/* glowing logo */
+
+.intro-logo{
+
+font-size:80px;
+font-weight:bold;
+
+color:#00ff9f;
+
+margin-bottom:20px;
+
+text-shadow:
+0 0 10px #00ff9f,
+0 0 25px #00ff9f,
+0 0 40px #00ff9f;
+
+animation:logoPulse 2s infinite alternate;
+
+}
+
+@keyframes logoPulse{
+
+from{
+transform:scale(1);
+}
+
+to{
+transform:scale(1.15);
+}
+
+}
+
+/* title */
+
+#intro-text{
+font-size:42px;
+color:white;
+margin-bottom:10px;
+}
+
+/* subtitle */
+
+.intro-sub{
+color:#aaa;
+letter-spacing:2px;
+margin-bottom:30px;
+}
+
+/* loading bar */
+
+.intro-bar{
+width:300px;
+height:6px;
+background:#111;
+border-radius:10px;
+overflow:hidden;
+margin:auto;
+}
+
+.intro-progress{
+height:100%;
+width:0%;
+background:#00ff9f;
+box-shadow:0 0 15px #00ff9f;
+animation:loadBar 3s linear forwards;
+}
+
+@keyframes loadBar{
+
+0%{width:0%;}
+100%{width:100%;}
+
+}
+
+/* hide intro */
+
+#intro.hide{
+opacity:0;
+pointer-events:none;
 }
 
 /* MATRIX BACKGROUND */
@@ -83,6 +204,11 @@ text-shadow:
 0 0 40px #00ff9f;
 }
 
+}
+/*canva section */
+
+canvas{
+pointer-events:none;
 }
 
 /* NAV LINKS */
@@ -239,6 +365,9 @@ box-shadow:0 0 20px #00ff9f;
 
 /* PROFILE IMAGE CONTAINER */
 
+/* ================= HERO PROFILE IMAGE ================= */
+/* This controls your hero image with glowing rotating ring */
+
 .hero-right{
 display:flex;
 justify-content:center;
@@ -348,10 +477,175 @@ transform:rotate(360deg);
 
 .profile-circle:hover{
 
-transform:scale(1.05);
+/* keep translate so image does not jump */
+transform: translate(-40px, 30px) scale(1.05);
 
 transition:0.4s;
 
+}
+
+/* ================= BUTTONS ================= */
+
+.buttons{
+margin-top:25px;
+}
+
+.btn{
+padding:12px 25px;
+background:black;
+border:1px solid #00ff9f;
+color:#00ff9f;
+text-decoration:none;
+border-radius:6px;
+transition:0.3s;
+margin-right:10px;
+}
+
+.btn:hover{
+background:#00ff9f;
+color:black;
+box-shadow:0 0 15px #00ff9f;
+}
+
+/* ================= TYPING TEXT ================= */
+
+#typing{
+color:#00ff9f;
+font-family:monospace;
+font-size:24px;
+}
+
+#typing::after{
+content:"|";
+animation:blink 1s infinite;
+}
+
+@keyframes blink{
+
+0%{opacity:1}
+50%{opacity:0}
+100%{opacity:1}
+
+}
+
+/* ================================================= */
+/* ============ NEW SECTION: TERMINAL MEMORIES ===== */
+/* ================================================= */
+
+/* Terminal container */
+
+.terminal{
+
+background:#020213;
+
+border:1px solid rgba(0,255,159,0.4);
+
+border-radius:10px;
+
+max-width:900px;
+
+margin:60px auto;
+
+box-shadow:0 0 20px rgba(0,255,159,0.2);
+
+overflow:hidden;
+
+}
+
+/* terminal header (like mac terminal) */
+
+.terminal-header{
+
+background:#111;
+
+padding:10px 15px;
+
+display:flex;
+
+align-items:center;
+
+gap:8px;
+
+}
+
+/* small colored dots */
+
+.dot{
+width:12px;
+height:12px;
+border-radius:50%;
+display:inline-block;
+}
+
+.red{background:#ff5f56;}
+.yellow{background:#ffbd2e;}
+.green{background:#27c93f;}
+
+/* terminal title */
+
+.terminal-title{
+
+color:#aaa;
+
+margin-left:10px;
+
+font-size:14px;
+
+}
+
+/* terminal body */
+
+.terminal-body{
+
+padding:25px;
+
+font-family:monospace;
+
+font-size:16px;
+
+line-height:1.8;
+
+text-align:left;
+
+}
+
+/* terminal lines */
+
+.terminal-line{
+
+color:#00ff9f;
+
+margin-bottom:10px;
+
+}
+
+/* clickable memory items */
+
+.memory-item{
+
+cursor:pointer;
+
+transition:0.3s;
+
+}
+
+/* hover effect */
+
+.memory-item:hover{
+
+color:white;
+
+text-shadow:0 0 8px #00ff9f;
+
+transform:translateX(10px);
+
+}
+
+/* HOVER EFFECT */
+
+.profile-circle:hover{
+transform: translate(-40px, 30px) scale(1.05);
+transition:0.4s;
 }
 
 /* BUTTONS */
@@ -474,7 +768,12 @@ gap:15px;
 
 }
 
+
 .tech-stack span{
+
+color:white;
+
+font-weight:500;
 
 background:rgba(0,0,0,0.6);
 
@@ -572,6 +871,91 @@ transition:0.3s;
 background:#00ff9f;
 color:black;
 
+}
+
+/* MEMORIES GALLERY */
+
+/* MEMORIES 3D GALLERY */
+
+/* MEMORIES 3D GALLERY */
+
+.memories{
+padding:120px 10%;
+text-align:center;
+}
+
+/* 3D gallery container */
+
+.gallery3d{
+width:100%;
+height:420px;
+display:flex;
+justify-content:center;
+align-items:center;
+perspective:1200px;
+margin-top:80px;
+}
+
+/* rotating carousel */
+
+.carousel3d{
+position:relative;
+width:260px;
+height:180px;
+transform-style:preserve-3d;
+animation:rotate360 25s linear infinite;
+
+/* important for click fix */
+pointer-events:none;
+}
+
+/* gallery images */
+
+.carousel3d img{
+position:absolute;
+width:260px;
+height:180px;
+object-fit:cover;
+border-radius:14px;
+border:2px solid #00ff9f;
+box-shadow:0 0 20px rgba(0,255,159,0.5);
+
+cursor:pointer;
+
+/* important for click fix */
+pointer-events:auto;
+}
+
+/* circular positioning */
+
+.carousel3d img:nth-child(1){ transform: rotateY(0deg) translateZ(450px); }
+.carousel3d img:nth-child(2){ transform: rotateY(30deg) translateZ(450px); }
+.carousel3d img:nth-child(3){ transform: rotateY(60deg) translateZ(450px); }
+.carousel3d img:nth-child(4){ transform: rotateY(90deg) translateZ(450px); }
+.carousel3d img:nth-child(5){ transform: rotateY(120deg) translateZ(450px); }
+.carousel3d img:nth-child(6){ transform: rotateY(150deg) translateZ(450px); }
+.carousel3d img:nth-child(7){ transform: rotateY(180deg) translateZ(450px); }
+.carousel3d img:nth-child(8){ transform: rotateY(210deg) translateZ(450px); }
+.carousel3d img:nth-child(9){ transform: rotateY(240deg) translateZ(450px); }
+.carousel3d img:nth-child(10){ transform: rotateY(270deg) translateZ(450px); }
+.carousel3d img:nth-child(11){ transform: rotateY(300deg) translateZ(450px); }
+.carousel3d img:nth-child(12){ transform: rotateY(330deg) translateZ(450px); }
+
+/* rotation animation */
+
+@keyframes rotate360{
+from{
+transform:rotateY(0deg);
+}
+to{
+transform:rotateY(360deg);
+}
+}
+
+/* pause rotation on hover */
+
+.carousel3d:hover{
+animation-play-state:paused;
 }
 
 

@@ -45,6 +45,47 @@ setTimeout(type,100);
 
 type();
 
+
+/* INTRO TYPING */
+
+/* INTRO TYPING */
+
+/* INTRO TYPING + LOADER */
+
+const introText = "Welcome to Shivraj's Portfolio";
+
+let introIndex = 0;
+
+function typeIntro(){
+
+if(introIndex < introText.length){
+
+document.getElementById("intro-text").innerHTML += introText.charAt(introIndex);
+
+introIndex++;
+
+setTimeout(typeIntro,50);
+
+}
+
+}
+
+typeIntro();
+
+
+/* hide intro */
+
+window.addEventListener("load", () => {
+
+setTimeout(() => {
+
+document.getElementById("intro").classList.add("hide");
+
+}, 3200);
+
+});
+
+
 /* LEETCODE COUNTER */
 
 /* LEETCODE COUNTER */
@@ -132,3 +173,91 @@ document.querySelector("nav a[href*="+id+"]").classList.add("active");
 
 };
 
+/* INFINITE CAROUSEL  MEMORIES SECTION */
+
+const track = document.querySelector(".carousel-track");
+const next = document.querySelector(".next");
+const prev = document.querySelector(".prev");
+
+let scrollAmount = 0;
+const scrollStep = 370;
+
+/* duplicate images for infinite effect */
+track.innerHTML += track.innerHTML;
+
+function moveNext(){
+scrollAmount += scrollStep;
+track.style.transition = "transform 0.5s ease";
+track.style.transform = `translateX(-${scrollAmount}px)`;
+
+if(scrollAmount >= track.scrollWidth/2){
+setTimeout(()=>{
+track.style.transition="none";
+scrollAmount = 0;
+track.style.transform = `translateX(0px)`;
+},500);
+}
+}
+
+function movePrev(){
+
+scrollAmount -= scrollStep;
+
+if(scrollAmount < 0){
+scrollAmount = track.scrollWidth/2;
+track.style.transition="none";
+track.style.transform = `translateX(-${scrollAmount}px)`;
+}
+
+}
+
+
+/* OPEN IMAGE FULLSCREEN FROM GALLERY */
+
+/* ================= TERMINAL MEMORIES IMAGE VIEW ================= */
+
+/* Select all clickable memory lines */
+const memoryItems = document.querySelectorAll(".memory-item");
+
+/* Loop through each memory item */
+memoryItems.forEach(item => {
+
+item.addEventListener("click", () => {
+
+const imgSrc = item.getAttribute("data-img");
+
+/* create fullscreen overlay */
+const overlay = document.createElement("div");
+
+overlay.style.position = "fixed";
+overlay.style.top = "0";
+overlay.style.left = "0";
+overlay.style.width = "100%";
+overlay.style.height = "100%";
+overlay.style.background = "rgba(0,0,0,0.95)";
+overlay.style.display = "flex";
+overlay.style.alignItems = "center";
+overlay.style.justifyContent = "center";
+overlay.style.zIndex = "9999";
+
+/* create image element */
+const img = document.createElement("img");
+
+img.src = imgSrc;
+img.style.maxWidth = "90%";
+img.style.maxHeight = "90%";
+img.style.borderRadius = "12px";
+img.style.boxShadow = "0 0 30px #00ff9f";
+
+/* append image to overlay */
+overlay.appendChild(img);
+
+/* click anywhere to close */
+overlay.onclick = () => document.body.removeChild(overlay);
+
+/* add overlay to page */
+document.body.appendChild(overlay);
+
+});
+
+});
