@@ -36,60 +36,163 @@ color:#cccccc;
 color:#00ff9f;
 }
 
-/* INTRO SCREEN */
 
 /* INTRO SCREEN */
+/* INTRO SCREEN */
+/* INTRO SCREEN */
+
+
+
+/* COOL ANIMATED INTRO BACKGROUND */
 
 #intro{
 position:fixed;
 top:0;
 left:0;
-width:100%;
-height:100%;
+width:100vw;
+height:100vh;
 
-background:#020213;
+background:
+radial-gradient(circle at center, rgba(0,255,159,0.15), transparent 60%),
+#020213;
 
 display:flex;
 justify-content:center;
 align-items:center;
 
-z-index:9999;
+z-index:99999;
 
-transition:opacity 1s ease;
+overflow:hidden;
+
+}
+/* moving grid */
+
+#intro::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:200%;
+height:200%;
+
+background-image:
+linear-gradient(rgba(0,255,159,0.07) 1px, transparent 1px),
+linear-gradient(90deg, rgba(0,255,159,0.07) 1px, transparent 1px);
+
+background-size:80px 80px;
+
+animation:gridMove 20s linear infinite;
+
 }
 
+@keyframes gridMove{
+
+0%{
+transform:translate(0,0);
+}
+
+100%{
+transform:translate(-80px,-80px);
+}
+
+}
+
+/* PARTICLES */
+
+#intro::after{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:
+radial-gradient(circle,#00ff9f 1px,transparent 2px);
+
+background-size:120px 120px;
+
+opacity:0.4;
+
+animation:particlesMove 40s linear infinite;
+
+}
+
+@keyframes particlesMove{
+
+0%{
+transform:translateY(0);
+}
+
+100%{
+transform:translateY(-200px);
+}
+
+}
+
+/* INTRO CONTENT CENTERING */
+
 .intro-container{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
 text-align:center;
 }
 
 /* glowing logo */
 
+/* COOL CYBER LOGO */
+
 .intro-logo{
 
-font-size:80px;
-font-weight:bold;
+font-size:90px;
+font-weight:900;
 
-color:#00ff9f;
+background:linear-gradient(
+45deg,
+#00ff9f,
+#00c3ff,
+#7a5cff,
+#00ff9f
+);
+
+background-size:400%;
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+animation:logoGlow 4s linear infinite;
 
 margin-bottom:20px;
 
-text-shadow:
-0 0 10px #00ff9f,
-0 0 25px #00ff9f,
-0 0 40px #00ff9f;
-
-animation:logoPulse 2s infinite alternate;
-
 }
 
-@keyframes logoPulse{
+/* glow animation */
 
-from{
-transform:scale(1);
+@keyframes logoGlow{
+
+0%{
+background-position:0%;
+filter:drop-shadow(0 0 8px #00ff9f);
 }
 
-to{
-transform:scale(1.15);
+50%{
+background-position:100%;
+filter:drop-shadow(0 0 12px #00c3ff);
+}
+
+100%{
+background-position:0%;
+filter:drop-shadow(0 0 8px #7a5cff);
 }
 
 }
@@ -136,12 +239,14 @@ animation:loadBar 3s linear forwards;
 
 }
 
-/* hide intro */
+/* smooth fade out */
 
 #intro.hide{
 opacity:0;
 pointer-events:none;
+transition:opacity 1s ease;
 }
+
 
 /* MATRIX BACKGROUND */
 
@@ -532,7 +637,7 @@ animation:blink 1s infinite;
 /* ============ NEW SECTION: TERMINAL MEMORIES ===== */
 /* ================================================= */
 
-/* Terminal container */
+/* Terminal container
 
 .terminal{
 
@@ -617,7 +722,7 @@ color:#00ff9f;
 
 margin-bottom:10px;
 
-}
+} */
 
 /* clickable memory items */
 
@@ -689,6 +794,50 @@ animation:blink 1s infinite;
 0%{opacity:1}
 50%{opacity:0}
 100%{opacity:1}
+
+}
+
+/* MEMORY GALLERY */
+
+.memory-gallery{
+
+margin-top:60px;
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+}
+
+.memory-gallery img{
+
+width:100%;
+
+height:200px;
+
+object-fit:cover;
+
+border-radius:10px;
+
+border:1px solid rgba(0,255,159,0.4);
+
+cursor:pointer;
+
+transition:0.4s;
+
+}
+
+/* hover glow */
+
+.memory-gallery img:hover{
+
+transform:scale(1.05);
+
+box-shadow:
+0 0 10px #00ff9f,
+0 0 25px #00ff9f;
 
 }
 
@@ -1445,4 +1594,59 @@ z-index: 5;
 position: relative;
 z-index: 5;
 display: inline-block;
+}
+
+/* CUSTOM CURSOR */
+
+/* CUSTOM CURSOR */
+
+body{
+/* cursor:none; */
+cursor: url("https://cur.cursors-4u.net/cursors/cur-9/cur817.cur"), auto;}
+
+/* main dot */
+
+.cursor{
+
+position:fixed;
+width:8px;
+height:8px;
+
+background:white;
+
+border-radius:50%;
+
+pointer-events:none;
+
+transform:translate(-50%,-50%);
+
+z-index:9999;
+
+box-shadow:
+0 0 10px #00ff9f,
+0 0 20px #00ff9f;
+
+}
+
+/* outer ring */
+
+.cursor-ring{
+
+position:fixed;
+
+width:35px;
+height:35px;
+
+border:2px solid #00ff9f;
+
+border-radius:50%;
+
+pointer-events:none;
+
+transform:translate(-50%,-50%);
+
+z-index:9998;
+
+transition:transform 0.08s ease;
+
 }

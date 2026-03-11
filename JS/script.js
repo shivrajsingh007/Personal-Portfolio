@@ -211,22 +211,34 @@ track.style.transform = `translateX(-${scrollAmount}px)`;
 
 }
 
+/* CUSTOM CURSOR */
+
+/* CUSTOM CURSOR */
+
+const cursor = document.querySelector(".cursor");
+const ring = document.querySelector(".cursor-ring");
+
+document.addEventListener("mousemove", e => {
+
+cursor.style.left = e.clientX + "px";
+cursor.style.top = e.clientY + "px";
+
+ring.style.left = e.clientX + "px";
+ring.style.top = e.clientY + "px";
+
+});
 
 /* OPEN IMAGE FULLSCREEN FROM GALLERY */
 
 /* ================= TERMINAL MEMORIES IMAGE VIEW ================= */
+/* OPEN IMAGE FULLSCREEN FROM GALLERY */
 
-/* Select all clickable memory lines */
-const memoryItems = document.querySelectorAll(".memory-item");
+/* OPEN IMAGE FULLSCREEN FROM GALLERY */
 
-/* Loop through each memory item */
-memoryItems.forEach(item => {
+document.addEventListener("click", function(e){
 
-item.addEventListener("click", () => {
+if(e.target.tagName === "IMG" && e.target.closest(".memory-gallery")){
 
-const imgSrc = item.getAttribute("data-img");
-
-/* create fullscreen overlay */
 const overlay = document.createElement("div");
 
 overlay.style.position = "fixed";
@@ -238,26 +250,22 @@ overlay.style.background = "rgba(0,0,0,0.95)";
 overlay.style.display = "flex";
 overlay.style.alignItems = "center";
 overlay.style.justifyContent = "center";
-overlay.style.zIndex = "9999";
+overlay.style.zIndex = "99999";
 
-/* create image element */
-const img = document.createElement("img");
+const bigImg = document.createElement("img");
 
-img.src = imgSrc;
-img.style.maxWidth = "90%";
-img.style.maxHeight = "90%";
-img.style.borderRadius = "12px";
-img.style.boxShadow = "0 0 30px #00ff9f";
+bigImg.src = e.target.src;
+bigImg.style.maxWidth = "90%";
+bigImg.style.maxHeight = "90%";
+bigImg.style.borderRadius = "10px";
+bigImg.style.boxShadow = "0 0 30px #00ff9f";
 
-/* append image to overlay */
-overlay.appendChild(img);
+overlay.appendChild(bigImg);
 
-/* click anywhere to close */
 overlay.onclick = () => document.body.removeChild(overlay);
 
-/* add overlay to page */
 document.body.appendChild(overlay);
 
-});
+}
 
 });
